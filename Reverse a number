@@ -1,0 +1,8 @@
+  let str = readLine();
+    str = str.split(" ");
+    let arr = [];
+    for (let i = 0; i < str.length; i++) {
+        arr.push(parseInt(str[i], 10));
+    }
+    return arr;
+}
