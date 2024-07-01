@@ -1,0 +1,15 @@
+function fizzBuzz(n) {
+    let countNum =[];
+    for(let i=1;i<=n;i++){
+        if(i%3!==0 && i%5!==0){
+                countNum.push(i);
+        }else  if(i%3==0 && i%5==0) {
+            countNum.push("FizzBuzz");   
+        }
+        else if(i%3==0){
+                countNum.push("Fizz");
+        }else if(i%5==0){
+                countNum.push("Buzz");
+        }
+    } return countNum;
+}
