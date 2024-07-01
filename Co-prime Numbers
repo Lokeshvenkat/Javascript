@@ -1,0 +1,15 @@
+function gcd(n1,n2){
+  if(n2==0){
+    return n1;
+  }
+    return gcd(n2,n1%n2);
+}
+    
+function coprimeNumbers(n) {
+  let count = 0;
+  for(let i=1;i<=n;i++){
+      if(gcd(i,n)==1){
+        count++;
+      }
+  } return count;
+  }
