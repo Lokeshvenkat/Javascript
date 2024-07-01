@@ -1,0 +1,16 @@
+onEvent("button1","click",function(){
+  var temp =getNumber("text_input1");
+  setNumber("label_result",toFahrenheit(temp));
+});
+onEvent("button2","click",function(){
+  var temp =getNumber("text_input1");
+ setNumber("label_result",toCelcius(temp));
+});
+function toFahrenheit(a){
+  var result = ((a*9/5)+32);
+ return result;
+}
+function toCelcius(b){
+  var result =((b-32)*5/9);
+  return result;
+}
