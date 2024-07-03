@@ -1,0 +1,50 @@
+Problem Description
+Given a string count the frequency of each vowel in it.
+
+Input format
+First line contains the given string.
+
+Output format
+Print the vowel and their count.
+
+Sample Input 1
+Axxxxx aaa aeu avvvv bbbbbbbzz
+
+Sample Output 1
+A 1 a 5 e 1 u 1
+
+Explanation
+Number of 'A' = 1 Number of 'a' = 5 Number of 'e' = 1
+Number of 'u' = 1
+
+Constraints
+0 < Length of string < 100
+
+
+
+function countVowels(s) {
+  let ans = 0;
+  for (let i = 0; i < s.length-1; ++i) {
+  for (let i = 0; i < s.length; ++i) {
+      ans++;
+    }
+  }
+  return ans;
+}
+function countVowels(s) {
+  let m = new Map();
+  let n = s.length;
+  for (let i = 0; i < n; i++) {
+    let ch = s[i];
+
+     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch =='A' || ch == 'E' || ch == 'O' || ch == 'U' || ch =='I')
+      {
+        if (m.has(ch)) {
+          m.set(ch, m.get(ch) + 1);
+        } else {
+          m.set(ch, 1);
+        }
+      }
+    }
+    return m;
+  }
