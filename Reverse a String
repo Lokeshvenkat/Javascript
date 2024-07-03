@@ -1,0 +1,42 @@
+Problem Description
+Write a function that reverses a string.
+
+Input format
+First line will be a single string
+
+Output format
+Print the reverse of the string in a single line.
+
+Sample Input 1
+abc
+
+Sample Output 1
+cba
+
+Explanation
+Reverse of string abc is cba
+
+Sample Input 2
+aaa
+
+Sample Output 2
+aaa
+
+Explanation
+Reverse of string aaa is aaa
+
+Constraints
+1<=size(S)<=200000
+
+function reverseString(s) {
+    let stack = [];
+    for (let ch of s) {
+         stack.insert(ch);
+    }
+    let ans = "";
+     while (s.length > 0) {
+      ans += stack[stack.length - 1];
+      stack.pop();
+    }
+    return ans;
+}
