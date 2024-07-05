@@ -1,0 +1,31 @@
+function meetingRooms(meetings) {
+    if(meetings.length<2){
+        return false;
+    }
+    let startTime =[];
+    let endTime = [];
+    let count=0;
+
+    for(let i=0;i<meetings.length;i++){
+        startTime.push(meetings[i][0]);  
+            endTime.push(meetings[i][1]);  
+        }
+        let left=0;
+        let right=0;
+        let rooms=0;
+        startTime.sort((a, b) => a - b);
+        endTime.sort((a, b) => a - b);
+       while(left<startTime.length && right<endTime.length){
+           if (startTime[left]<endTime[right]){
+                    rooms++;
+                    left++;
+                 }
+               else{
+                   rooms--;
+                   right++;
+               } if(count<rooms){
+                  count=rooms;
+               }    
+       }
+        return count;
+}
