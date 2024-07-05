@@ -1,0 +1,23 @@
+function maxArea(height) {
+
+    let left =0;
+    let right=height.length-1;
+    let maxarea=0;
+
+   while(left<right){
+
+       let minHeight=Math.min(height[left],height[right]);
+    let product = minHeight*(right-left);
+
+       if(product>maxarea){
+           maxarea=product;
+       } else if(height[left] < height[right]){
+           left++;
+           }
+           else{
+           right--;
+       } 
+   }
+return maxarea;
+
+}
