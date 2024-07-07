@@ -1,0 +1,25 @@
+function lengthOfLongestSubstringKDistinct(s, k) {
+    let left=0;
+    let right=0;
+    let ans=0;
+    let map = new Map();
+while(right<s.length){
+  if(map.has(s[right])==false){
+      map.set(s[right],1);
+  }else{
+    let value = map.get(s[right]);
+    map.set(s[right],value+1);
+  }
+
+  while(map.size>k){
+    map.set(s[left],map.get(s[left])-1);
+    if(map.get(s[left])==0){
+      map.delete(s[left]);
+    }
+    left++;
+  }
+  ans= Math.max(ans,right-left+1);
+  right++;
+}
+return ans;
+}
