@@ -1,0 +1,18 @@
+function maximumSubarraySumSizeK(N,A,K) {
+    let start =0;
+    let end =K-1;
+    let current =0;
+    for(let i=start;i<=end;i++){
+        current+=A[i];
+    }
+    let result= current;
+
+    while(end<N-1){
+        start++;
+        end++;
+        current=current-A[start-1]+A[end];
+        result=Math.max(result,current);
+    }
+      return result;
+    
+}
