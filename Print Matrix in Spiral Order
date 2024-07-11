@@ -1,0 +1,43 @@
+function spiralMatrixII(n) {
+
+    let matrix =new Array(n);
+   
+    let topRow=0;
+    let bottomRow=n-1;
+
+    let leftColumn=0;
+    let rightColumn=n-1;
+
+    for(let i=0;i<n;i++){
+        matrix[i]=new Array(i);
+    }
+     let currentValue=1;
+
+    while(currentValue<=n*n){
+
+        for(let i=leftColumn;i<=rightColumn;i++){
+            matrix[topRow][i]=currentValue;
+            currentValue++;
+        }
+        topRow++;
+
+        for(let j=topRow;j<=bottomRow;j++){
+            matrix[j][rightColumn]=currentValue;
+            currentValue++;
+        }
+        rightColumn--;
+    
+    for(let k=rightColumn;k>=leftColumn;k--){
+         matrix[bottomRow][k]=currentValue;
+            currentValue++;
+    }
+        bottomRow--;
+
+for(let l=bottomRow;l>=topRow;l--){
+         matrix[l][leftColumn]=currentValue;
+            currentValue++;
+            }
+           leftColumn++; 
+}
+return matrix;
+}
