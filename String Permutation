@@ -1,0 +1,16 @@
+function stringPermutation(n, s, arr) {
+
+let map = new Map();
+    for(let i=0;i<arr.length;i++){
+        if(!map.has(s[i])){
+            map.set(s[i],arr[i]);
+        }
+    }
+    let str ="";
+let newArr = Array.from(map);
+newArr.sort((a,b)=>a[1]-b[1]);
+for(let i=0;i<newArr.length;i++){  
+        str+=newArr[i][0]; 
+}
+return str;
+}
