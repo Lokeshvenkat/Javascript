@@ -1,0 +1,67 @@
+
+
+
+
+function mergeSort(n, arr) {
+mergeSorting(arr,0,n-1);
+return arr;
+
+}
+
+function mergeSorting(arr,left,right){
+
+    if(left>=right){
+        return;
+    }
+
+    let mid= Math.floor((right+left)/2);
+    mergeSorting(arr,left,mid);
+    mergeSorting(arr,mid+1,right);
+    merge(arr,left,mid,right);
+}
+
+   function merge(arr,left,mid,right){
+            let n=mid-left+1;
+            let m = right-mid;
+
+            let arr1=new Array(n);
+            let arr2=new Array(m);
+            
+            for(let i=0;i<n;i++){
+                arr1[i]=arr[left+i];
+            }
+
+            for(let j=0;j<m;j++){
+                 arr2[j]=arr[mid+1+j];
+            }
+
+        let ind1=0;
+        let ind2=0;
+        let k=left;
+       
+        while(ind1<n && ind2<m){
+            if(arr1[ind1]<=arr2[ind2]){
+                arr[k]=arr1[ind1];
+                ind1++;
+               
+            }else{
+               arr[k]=arr2[ind2];
+                ind2++;
+                
+            }
+            k++;
+        }
+
+        while(ind1<n){
+            arr[k]=arr1[ind1];
+            ind1++;
+            k++;
+        }
+
+         while(ind2<m){
+            arr[k]=arr2[ind2];
+            ind2++;
+            k++;
+        }
+
+   } 
