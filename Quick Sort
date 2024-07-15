@@ -1,0 +1,29 @@
+function quickSort(n, arr) {
+    quicksort(arr,0,n-1);
+    return arr; 
+}
+function quicksort(arr,left,right){
+    if(left>=right){
+        return;
+    }
+let partInd = partition(arr,left,right);
+quicksort(arr,left,partInd-1);
+quicksort(arr,partInd+1,right);
+}
+
+function partition(arr,left,right){
+    let partElem = arr[right];
+    let i=left-1;
+     for(let j=left;j<right;j++){
+         if(arr[j]<partElem){
+             i++;
+               let temp=arr[j];
+               arr[j]=arr[i];
+               arr[i]=temp;
+         }
+     }
+     let temp=arr[right];
+     arr[right]=arr[i+1];
+     arr[i+1]=temp;
+     return i+1;
+}
