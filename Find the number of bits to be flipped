@@ -1,0 +1,13 @@
+function countConversionBits(a, b) {
+   let flip =0n;
+   while(a>0 || b>0){
+       let temp1 = (a&1n);
+       let temp2 = (b&1n);
+       if(temp1!==temp2){
+           flip++;
+       }
+       a>>=1n;
+       b>>=1n;
+   }
+   return flip;
+}
