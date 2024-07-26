@@ -1,0 +1,13 @@
+function kthSmallestElementInMatrix(mat, k) {
+    let n=mat.length, low =mat[0][0], high=mat[n-1][n-1],ans=0;
+    while(low<=high){
+        let mid = Math.floor((low+high)/2);
+        if(countLess(mat,mid)>=k){
+            ans=mid;
+            high=mid-1;
+        }else{
+            low=mid+1;
+        }
+    }
+    return ans;
+}
