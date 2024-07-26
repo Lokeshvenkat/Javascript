@@ -1,0 +1,23 @@
+function swapAllOddAndEvenBits(n) {
+   let ans =0n;
+   for(let i=0;i<32;i++){
+       if(checkSetBit(n,i)==true){
+           if(i%2==0){
+               ans = setBit(ans,i+1);
+           }else{
+               ans = setBit(ans,i-1);
+           }
+       }
+   }
+   return ans;
+}
+
+function checkSetBit(n,idx){
+    let rr= 1n<<BigInt(idx);
+    return (n&rr)>0;
+}
+
+function setBit(n,idx){
+    let rr = 1n<<BigInt(idx);
+    return n | rr;
+}
