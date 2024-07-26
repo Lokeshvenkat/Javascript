@@ -1,0 +1,17 @@
+function twoNonRepeatingNumbers(n,nums) {
+
+    let x=0;
+    for(let i=0;i<n;i++){
+        x^=nums[i];
+    }
+    let mask = x&-x;
+    let b1=0,b2=0;
+    for(let i=0;i<n;i++){
+        if(nums[i]&mask){
+            b1^=nums[i];
+        }else{
+            b2^=nums[i];
+        }
+    }
+    return [Math.min(b1,b2),Math.max(b1,b2)];
+}
